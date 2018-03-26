@@ -6,7 +6,7 @@
 #    By: bpodlesn <bpodlesn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/09 10:42:51 by bpodlesn          #+#    #+#              #
-#    Updated: 2018/03/24 16:56:31 by bpodlesn         ###   ########.fr        #
+#    Updated: 2018/03/26 17:14:38 by bpodlesn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,22 @@ SRCS = main.c \
 	zoom.c \
 	draw.c \
 	threads.c \
+	ft_thread.c \
+	fill_pic_thread.c \
+	keys.c \
+	complex_thread.c \
+	math.c \
 
 OBJ = main.o \
 	fracs.o \
 	zoom.o \
 	draw.o \
 	threads.o \
+	ft_thread.o \
+	fill_pic_thread.o \
+	keys.o \
+	complex_thread.o \
+	math.o \
 
 MLX = -lmlx -framework OpenGL -framework AppKit
 

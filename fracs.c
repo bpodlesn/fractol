@@ -6,13 +6,13 @@
 /*   By: bpodlesn <bpodlesn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/23 11:20:27 by bpodlesn          #+#    #+#             */
-/*   Updated: 2018/03/23 13:14:40 by bpodlesn         ###   ########.fr       */
+/*   Updated: 2018/03/26 17:06:18 by bpodlesn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int		fractal_burnship(t_mlx mlx, int i)
+int			fractal_burnship(t_mlx mlx, int i)
 {
 	int		n;
 	double	r_x;
@@ -34,9 +34,7 @@ int		fractal_burnship(t_mlx mlx, int i)
 	return (n);
 }
 
-
-
-int		fractal_mandelbrot(t_mlx mlx, int i)
+int			fractal_mandelbrot(t_mlx mlx, int i)
 {
 	int		n;
 	double	r_x;
@@ -58,7 +56,7 @@ int		fractal_mandelbrot(t_mlx mlx, int i)
 	return (n);
 }
 
-int		fractal_mandelbrot_4th(t_mlx mlx, int i)
+int			fractal_mandelbrot_4th(t_mlx mlx, int i)
 {
 	int		n;
 	double	r_x;
@@ -83,7 +81,7 @@ int		fractal_mandelbrot_4th(t_mlx mlx, int i)
 	return (n);
 }
 
-int		fract_img_quas_perpend(t_mlx mlx, int i)
+int			fract_img_quas_perpend(t_mlx mlx, int i)
 {
 	int		n;
 	double	r_x;
@@ -98,7 +96,8 @@ int		fract_img_quas_perpend(t_mlx mlx, int i)
 	{
 		sqr_r_x = r_x * r_x;
 		sqr_f_y = f_y * f_y;
-		f_y = 4 * r_x * fabs(f_y) * fabs(sqr_r_x - sqr_f_y) + mlx.types[i].complex_y;
+		f_y = 4 * r_x * fabs(f_y) * fabs(sqr_r_x - sqr_f_y) +
+		mlx.types[i].complex_y;
 		r_x = sqr_r_x * sqr_r_x + sqr_f_y * sqr_f_y - 6
 		* sqr_r_x * sqr_f_y + mlx.types[i].complex_x;
 		if ((r_x * r_x + f_y * f_y) > 4)
@@ -108,7 +107,7 @@ int		fract_img_quas_perpend(t_mlx mlx, int i)
 	return (n);
 }
 
-int		fractal_julia(t_mlx mlx, int i)
+int			fractal_julia(t_mlx mlx, int i)
 {
 	int		n;
 	double	r_x;
