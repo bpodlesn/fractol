@@ -6,21 +6,11 @@
 /*   By: bpodlesn <bpodlesn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/26 17:13:36 by bpodlesn          #+#    #+#             */
-/*   Updated: 2018/03/26 17:14:20 by bpodlesn         ###   ########.fr       */
+/*   Updated: 2018/03/27 15:23:13 by bpodlesn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-
-void		put_pixel_on(t_mlx mlx, int x, int y)
-{
-	int		i;
-
-	i = (x * 4) + (y * mlx.image.size_line);
-	mlx.image.line[i++] = 255;
-	mlx.image.line[i++] = 255;
-	mlx.image.line[i] = 0;
-}
 
 void		create_lines(t_mlx mlx, int i)
 {
@@ -81,6 +71,34 @@ t_mlx		make_coordinate(t_mlx mlx)
 	return (mlx);
 }
 
+t_mlx		continue_max_min_comp(t_mlx mlx)
+{
+	if (mlx.nu_fract == 6)
+	{
+		mlx.complex.max_false = 2;
+		mlx.complex.min_false = -2.0;
+		mlx.complex.max_true = 1.5;
+		mlx.complex.min_true = -3.0;
+	}
+	else if (mlx.nu_fract == 8)
+	{
+		mlx.complex.max_false = 2;
+		mlx.complex.min_false = -2.0;
+		mlx.complex.max_true = 2;
+		mlx.complex.min_true = -2;
+	}
+	else if (mlx.nu_fract == 7)
+	{
+		mlx.complex.max_false = 1.470645;
+		mlx.complex.min_false = -1.718165;
+		mlx.complex.max_true = 2.076587;
+		mlx.complex.min_true = -1.909425;
+	}
+	else if (mlx.nu_fract == 1)
+		mlx.complex.max_true = 0.5;
+	return (mlx);
+}
+
 t_mlx		max_min_comp(t_mlx mlx)
 {
 	mlx.complex.max_false = 1.25;
@@ -91,9 +109,7 @@ t_mlx		max_min_comp(t_mlx mlx)
 		mlx.complex.max_true = 1.14;
 		mlx.complex.min_true = -1.36;
 	}
-	else if (mlx.nu_fract == 1)
-		mlx.complex.max_true = 0.5;
-	else if (mlx.nu_fract == 2)
+	else if (mlx.nu_fract == 2 && mlx.nu_fract == 7)
 	{
 		mlx.complex.max_false = 2;
 		mlx.complex.min_false = -2;
@@ -106,6 +122,7 @@ t_mlx		max_min_comp(t_mlx mlx)
 		mlx.complex.max_true = 1.75;
 		mlx.complex.min_true = -1.75;
 	}
+	mlx = continue_max_min_comp(mlx);
 	mlx.counter++;
 	return (mlx);
 }

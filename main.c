@@ -6,25 +6,23 @@
 /*   By: bpodlesn <bpodlesn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/09 10:22:10 by bpodlesn          #+#    #+#             */
-/*   Updated: 2018/03/26 17:16:08 by bpodlesn         ###   ########.fr       */
+/*   Updated: 2018/03/27 15:48:40 by bpodlesn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-#include <stdio.h>
 
-void		usage(void)
+int			ft_keys(int key, void *zlx)
 {
-	ft_putstr("\e[38;5;196mError: Invalid input!!!\e[0m\n");
-	ft_putstr("Usage - ./fractol fractal-name");
-	ft_putstr("[\e[38;5;35mm\e[0m, \e[38;5;197mb\e[0m, ");
-	ft_putendl("\e[38;5;123mj\e[0m, \e[38;5;112m4\e[0m, \e[38;5;90mq\e[0m]");
-	ft_putendl("\e[38;5;35mm - Mandelbrot");
-	ft_putendl("\e[38;5;197mb - Burnship");
-	ft_putendl("\e[38;5;123mj - Julia");
-	ft_putendl("\e[38;5;112m4 - 4thMandelbrot");
-	ft_putendl("\e[38;5;90mq - Quas Perpend\e[0m");
-	exit(0);
+	t_mlx	*mlx;
+
+	mlx = (t_mlx*)zlx;
+	keys(key, mlx);
+	keys2(key, mlx);
+	keys3(key, mlx);
+	keys4(key, mlx);
+	keys5(key, mlx);
+	return (0);
 }
 
 int			ft_mouse(int x, int y, t_mlx *zlx)

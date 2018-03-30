@@ -6,7 +6,7 @@
 #    By: bpodlesn <bpodlesn@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/09 10:42:51 by bpodlesn          #+#    #+#              #
-#    Updated: 2018/03/26 17:14:38 by bpodlesn         ###   ########.fr        #
+#    Updated: 2018/03/27 15:49:54 by bpodlesn         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = fractol
 
 SRCS = main.c \
 	fracs.c \
+	fracs_2.c \
 	zoom.c \
 	draw.c \
 	threads.c \
@@ -22,9 +23,11 @@ SRCS = main.c \
 	keys.c \
 	complex_thread.c \
 	math.c \
+	instructions.c \
 
 OBJ = main.o \
 	fracs.o \
+	fracs_2.o \
 	zoom.o \
 	draw.o \
 	threads.o \
@@ -33,6 +36,7 @@ OBJ = main.o \
 	keys.o \
 	complex_thread.o \
 	math.o \
+	instructions.o \
 
 MLX = -lmlx -framework OpenGL -framework AppKit
 
@@ -47,7 +51,7 @@ all: lib $(NAME)
 $(NAME): $(OBJ) $(HEADER) libft/libft.a
 		gcc $(FLAGS) $(SRCS)
 		gcc -g -o $(NAME) $(OBJ) libft/libft.a $(MLX)
-		@afplay ./surprise-motherfucker.mp3
+		@sh ./scr.sh
 
 libft/libft.a: lib
 

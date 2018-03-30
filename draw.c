@@ -6,7 +6,7 @@
 /*   By: bpodlesn <bpodlesn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 16:33:07 by bpodlesn          #+#    #+#             */
-/*   Updated: 2018/03/26 18:02:05 by bpodlesn         ###   ########.fr       */
+/*   Updated: 2018/03/27 15:48:36 by bpodlesn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@ int		choose_retd(t_mlx mlx, int i)
 		return (fract_img_quas_perpend(mlx, i));
 	else if (mlx.nu_fract == 5)
 		return (fractal_julia(mlx, i));
+	else if (mlx.nu_fract == 6)
+		return (fractal_celtic_mandelbrot(mlx, i));
+	else if (mlx.nu_fract == 7)
+		return (fractal_cubic_burnship(mlx, i));
+	else if (mlx.nu_fract == 8)
+		return (fractal_verticat_mandelbrot_5th(mlx, i));
 	return (0);
 }
 
@@ -78,6 +84,9 @@ t_mlx	nu_fract(t_mlx mlx, char *argv)
 	ft_strcmp(argv, "4") == 0 ? mlx.nu_fract = 3 : 0;
 	ft_strcmp(argv, "q") == 0 ? mlx.nu_fract = 4 : 0;
 	ft_strcmp(argv, "j") == 0 ? mlx.nu_fract = 5 : 0;
+	ft_strcmp(argv, "c") == 0 ? mlx.nu_fract = 6 : 0;
+	ft_strcmp(argv, "cb") == 0 ? mlx.nu_fract = 7 : 0;
+	ft_strcmp(argv, "5m") == 0 ? mlx.nu_fract = 8 : 0;
 	if (mlx.nu_fract == 0)
 		usage();
 	return (mlx);

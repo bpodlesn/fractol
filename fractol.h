@@ -6,7 +6,7 @@
 /*   By: bpodlesn <bpodlesn@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/09 10:22:31 by bpodlesn          #+#    #+#             */
-/*   Updated: 2018/03/26 18:03:19 by bpodlesn         ###   ########.fr       */
+/*   Updated: 2018/03/27 16:56:04 by bpodlesn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ typedef struct		s_mlx
 	long double		mover;
 }					t_mlx;
 
-void				put_pixel_on(t_mlx mlx, int x, int y);
 void				create_lines(t_mlx mlx, int i);
 int					choose_retd(t_mlx mlx, int i);
 int					fractal_mandelbrot(t_mlx mlx, int i);
@@ -85,6 +84,9 @@ int					fractal_burnship(t_mlx mlx, int i);
 int					fractal_mandelbrot_4th(t_mlx mlx, int i);
 int					fract_img_quas_perpend(t_mlx mlx, int i);
 int					fractal_julia(t_mlx mlx, int i);
+int					fractal_celtic_mandelbrot(t_mlx mlx, int i);
+int					fractal_cubic_burnship(t_mlx mlx, int i);
+int					fractal_verticat_mandelbrot_5th(t_mlx mlx, int i);
 t_mlx				real_julia(t_mlx mlx, int x);
 t_mlx				false_julia(t_mlx mlx, int y);
 t_mlx				save_color(t_mlx mlx, int color, int i);
@@ -97,6 +99,7 @@ t_mlx				drawer(t_mlx mlx);
 t_mlx				nu_fract(t_mlx mlx, char *argv);
 t_mlx				rewrite_compl(t_mlx mlx);
 t_mlx				max_min_comp(t_mlx mlx);
+t_mlx				continue_max_min_comp(t_mlx mlx);
 t_mlx				coml_x_y(t_mlx mlx, int i);
 t_mlx				comp_my(t_mlx mlx, int y);
 t_mlx				comp_mx(t_mlx mlx, int x);
@@ -116,9 +119,12 @@ int					zoom(int key, int x, int y, t_mlx *zlx);
 void				keys(int key, t_mlx *mlx);
 void				keys2(int key, t_mlx *mlx);
 void				keys3(int key, t_mlx *mlx);
+void				keys4(int key, t_mlx *mlx);
+void				keys5(int key, t_mlx *mlx);
 int					ft_mouse(int x, int y, t_mlx *zlx);
 int					ft_keys(int key, void *zlx);
 void				instructions(t_mlx mlx);
+void				else_instructions(t_mlx mlx, int c);
 t_mlx				threads(t_mlx mlx);
 t_mlx				threads_draw(t_mlx mlx);
 t_mlx				threads_complex(t_mlx mlx);
